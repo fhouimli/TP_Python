@@ -1,0 +1,34 @@
+version = '2.0'
+
+
+task purge(type:Delete) {
+  //println 'Cleaning up old files'
+  delete 'build'
+}
+task dependances(type:Exec, dependsOn:purge) {
+  executable 'sh'
+  args '-c', 'pip3 install flask'
+   standardOutput = new ByteArrayOutputStream()
+   ext.output = { return standardOutput.toString() }
+}
+
+
+def tarfile = "APP_Parc_Machines_V-" + version
+
+
+task packageDistribution(type: Zip, dependsOn: dependances) {
+    from ('parcMachines.py') { into '.' }
+    archiveFileName = tarfile + ".zip"
+    destinationDirectory = file("build")
+}
+
+
+task up(type:Exec, dependsOn: packageDistribution) {
+ executable 'sh'
+ args '-c', 'curl -v --user "admin:admin" --upload-file build/APP_Parc_Machines_V-'+ version+'.zip http://192.168.0.51:8081/repository/Depot/APP_Parc_Machines_V-'+ version+'.zip'
+ standardOutput = new ByteArrayOutputStream()
+ ext.output = { return standardOutput.toString() }
+}
+
+
+
