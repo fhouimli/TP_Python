@@ -19,7 +19,9 @@ def tarfile = "APP_Parc_Machines_V-" + version
 task packageDistribution(type: Zip, dependsOn: dependances) {
     from ('parcMachines.py') { into '.' }
     archiveFileName = tarfile + ".zip"
+	println 'avant build'
     destinationDirectory = file("build")
+	println 'apres build'
 }
 
 
