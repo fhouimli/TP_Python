@@ -3,25 +3,6 @@
 sudo apt-get update  
 sudo apt-get -y install open-iscsi
 sudo apt-get -y install lvm2
-#sudo apt-get -y install gnupg #gnupg2 gnupg3
-
-#mkfs.ext4 /dev/sdb
-#mkdir -p /backup1
-#echo "/dev/sdb   /backup1  ext4   defaults    0   0">> /etc/fstab
-#mount /backup1
-
-##ssh authentification
-#sudo sed -i 's/ChallengeResponseAuthentication no/ChallengeResponseAuthentication yes/g' /etc/ssh/sshd_config
-#sudo sed -i 's/#PubkeyAuthentication yes/PubkeyAuthentication yes/g' /etc/ssh/sshd_config
-#sudo sed -i 's/#PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
-#sudo service ssh restart
-
-#useradd userjob -d /home/userjob -s /bin/bash
-#mkdir -p /home/userjob/
-#chown userjob.userjob /home/userjob
-#sudo echo -e "Mypass\nMypass\n" | passwd userjob
-#sudo -u userjob ssh-keygen -t rsa -b 2048 -f /home/userjob/.ssh/id_rsa 
-#echo "userjob  ALL=NOPASSWD: /usr/bin/apt-get" | sudo tee /etc/sudoers.d/userjob
 
 
 ## java for jenkins
@@ -45,17 +26,7 @@ sudo service jenkins start
 
 
 ufw allow 8080/tcp
-# installation pare feu  iptables
-#sudo apt-get update
-#sudo apt-get install -y iptables
-#echo iptables-persistent iptables-persistent/autosave_v4 boolean true | sudo debconf-set-selections
-#echo iptables-persistent iptables-persistent/autosave_v6 boolean true | sudo debconf-set-selections
-#sudo apt-get install -y iptables-persistent
 
-#ajout regle firewall
-#sudo iptables -t filter -A INPUT -p tcp --dport 22 -j ACCEPT
-#sudo iptables -t filter -A INPUT -p tcp --dport 8080 -j ACCEPT
-#sudo iptables-save -f /etc/iptables/rules.v4
 
 #########Installation Git#######################
 sudo apt-get -y install git
