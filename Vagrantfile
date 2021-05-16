@@ -14,7 +14,7 @@ Vagrant.configure('2') do |config|
                     machine.vm.network :public_network, ip: "192.168.0.60"
                     machine.vm.provider 'virtualbox' do |vb|
 						vb.memory = '3000'
-					machine.vm.network :forwarded_port, guest: 8080, host: 8080, host_ip: "192.168.0.60"
+					machine.vm.network :forwarded_port, guest: 8083, host: 8083, host_ip: "192.168.0.60"
 						
         
 				    # On attache les fichiers 'disque' sur la VM
@@ -41,7 +41,7 @@ end
 				srvnexus.vm.network :public_network, ip: "192.168.0.61"
 				srvnexus.vm.provider :virtualbox do |v|
 					v.memory = '1000'
-				srvnexus.vm.network :forwarded_port, guest: 8081, host: 8081, host_ip: "192.168.0.61"
+				srvnexus.vm.network :forwarded_port, guest: 8082, host: 8082, host_ip: "192.168.0.61"
 					# Shared folder
 				srvnexus.vm.synced_folder "project/", "/home/project", create: true
 				end

@@ -25,7 +25,7 @@ sudo apt-get -y install jenkins
 sudo service jenkins start
 
 
-ufw allow 8080/tcp
+ufw allow 8083/tcp
 
 
 #########Installation Git#######################

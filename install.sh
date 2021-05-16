@@ -46,7 +46,7 @@ systemctl daemon-reload
 
 systemctl enable --now nexus.service
 
-ufw allow 8081/tcp
+ufw allow 8082/tcp
 
 # Affiche le mot de passe
 echo 'Mot de passe admin \n'
