@@ -51,6 +51,6 @@ ufw allow 8081/tcp
 # Affiche le mot de passe
 echo 'Mot de passe admin \n'
 
-sleep 10
+sleep 30
 sudo cat /opt/nexus/sonatype-work/nexus3/admin.password
 echo '\n\n'

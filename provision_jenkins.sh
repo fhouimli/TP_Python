@@ -37,12 +37,12 @@ sleep 30
 sudo apt-get -y remove gradle
 sleep 30
 sudo curl -O https://downloads.gradle-dn.com/distributions/gradle-7.0.1-bin.zip
-sleep 60
+sleep 90
 sudo mkdir /var/lib/Gradle
 sleep 30
 sudo apt install -y unzip
 sleep 30
-sudo unzip -d -A /var/lib/Gradle gradle-7.0.1-bin.zip
+sudo unzip -d  /var/lib/Gradle gradle-7.0.1-bin.zip
 sleep 30
 
 #=============Installation Python ========================
